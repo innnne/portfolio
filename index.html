@@ -133,11 +133,7 @@
                             <dt class=""><span style="float:right;font-weight:normal;">2023.06 - 2023.07</span></dt>
                             <dd class=""></dd>
                         </dl>
-                        <a href="#none">바로가기</a>
-
-                        <p>
-                            <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
-                        </p>
+                        <!--<a href="#none">바로가기</a>-->
                     </div>
                     <div class="comment">
                         <div></div>
@@ -153,7 +149,6 @@
 
 <script>
     
-
     
     const porData = {
         1 : {
@@ -212,10 +207,19 @@
         $('.layerpop').addClass('on');
         $('.wrapper').addClass('on');
 
+        $('.layerpop').attr('id', 'layerpop' + idx);
+
         $('.pic > img').attr('src', porData[idx].url);
         $('.cont .data > dt').text(porData[idx].tit);
         $('.cont .data > dd').html( porData[idx].content.replace(/\n/g, '<br />') );
-        console.log(idx);
+        //console.log(idx);
+
+        
+        if(porData[idx].aurl){
+            console.log(idx);
+            $('#layerpop' + idx + ' .cont').append('<a href="' + porData[idx].aurl + '" target="_blank" >바로가기</a>');
+            $('.cont > a').attr('href', porData[idx].aurl);
+        }
     }
 
     $('.layerpop__close').click(function(){
@@ -236,7 +240,9 @@
             //$('.cont .data').empty('');
             if(porData.hasOwnProperty(idx)){// 해당 인덱스의 데이터가 존재하는지 확인
                 $(this).append('<a href="#none"><img src="'+ porData[idx].url + '"/></a>');
+
             }
+
         });
     }
 
@@ -253,7 +259,7 @@
         }
         
     });
-    //popOn(5);*/
+    //popOn(5);
 
     $(window).scroll(function(){
 

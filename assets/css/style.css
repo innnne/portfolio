@@ -100,18 +100,19 @@ input { border:none; padding:5px; }
     .content > div { padding:0 20px; }
 
     .info { display:block; text-align:center; }
+    .info > div { padding:15px 0; }
     .info__prof { width:100%; }
     .info__prof > div { width:150px; height:150px; }
 
-    .skills__list > li { min-width:90px; margin:0 15px; }
-    .skills__list > li > div { width:90px; height:90px; }
+    .skills__list > li { min-width:80px; margin:0 12px; }
+    .skills__list > li > div { width:80px; height:80px; }
 
     .pject__list > li { width:calc((100% - 4px) / 3); height:190px; margin-bottom:2px; } 
 
     /* pop */
-    .layerpop__wrap { flex-direction:column; width:80%; min-height:auto; }
+    .layerpop__wrap { flex-direction:column; width:80%; height:80%; min-height:80%; }
     .layerpop__wrap .pic { width:100%; border-top-right-radius:10px; }
-    .layerpop__wrap .pic img { border-bottom-left-radius:0; border-top-right-radius:10px; }
+    .layerpop__wrap .pic img { object-fit:cover; object-position:50% 0; border-bottom-left-radius:0; border-top-right-radius:10px; }
     .layerpop__wrap .contents { overflow-y:scroll; padding:15px; }
 
 }
@@ -122,11 +123,16 @@ input { border:none; padding:5px; }
     
     .info__prof { width:300px; }
     .info__prof > div { width:200px; height:200px; }
-
+    /*
+    .info { display:block; text-align:center; }
+    .info > div { padding:15px 0; }
+    .info__prof { width:100%; }
+    .info__prof > div { width:150px; height:150px; }
+*/
     /* pop */  
-    .layerpop__wrap { flex-direction:column; width:80%; min-height:auto; }
-    .layerpop__wrap .pic { width:100%; height:300px; border-top-right-radius:10px; }
-    .layerpop__wrap .pic img { border-bottom-left-radius:0; border-top-right-radius:10px; }
+    .layerpop__wrap { flex-direction:column; width:80%; height:80%; min-height:80%; }
+    .layerpop__wrap .pic { overflow:hidden; width:100%; max-height:400px;/*height:400px;*/ border-top-right-radius:10px; }
+    .layerpop__wrap .pic img { object-fit:cover; object-position:50% 0; border-bottom-left-radius:0; border-top-right-radius:10px; }
     .layerpop__wrap .contents { overflow-y:scroll; }
 
 
