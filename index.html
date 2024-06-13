@@ -1,13 +1,16 @@
 <html lang="ko">
 <head>
     <meta charset="utf-8">
+    <title>최인혜 포트폴리오</title>
+    <meta name="viewport" content="width=device-width, initial-scale:1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/reset.css" />
-    <script type="text/javascript" src=""></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>    
 </head>
 <body>
     <div id="skip"></div>
     <div class="wrapper">
+
         <div class="header">
             <h1 class="header__logo">
                 <a href="#none"><img src="./assets/images/logo_w.png" alt="" />portfolio</a>
@@ -23,10 +26,18 @@
                     <dl>
                         <dt>최인혜(Choi In Hyea)</dt>
                         <dd>프로젝트 <span class="fw-bold">1개</span> 경력 <span class="fw-bold">3년 4개월</span></dd>
+                        <!--
                         <dd>안녕하세요! 저는 프론트엔드 개발자 최인혜입니다.<br />
                             사용자 중심의 웹 경험을 만들기 위해 노력합니다.<br />
                             함께 일하면 열정과 전문성으로 최고의 결과물을 창출할 것입니다.<br />
                              함께 멋진 작업을 만들어나가는 것을 기대합니다!</dd>
+                        -->
+                        <dd>안녕하세요.
+                            저는 빠른 작업 처리와 성실함을 바탕으로<br />
+                            웹사이트 제작에 참여하고 있는 퍼블리셔 최인혜입니다.<br />
+                            
+                            프로젝트의 원활한 진행과 효율적인 결과물을 위해<br />
+                            팀원들과 활발히 소통을 하도록 노력하겠습니다 :)<br /></dd>
                     </dl>
                 </div>
             </div>
@@ -65,26 +76,212 @@
                     </li>
                     <li>
                         <div><img src="./assets/images/Skill_html.png" /></div>
-                        <p>sdfdsfdsfwefgrwgreg</p>
+                        <p>Adobe XD</p>
                     </li>
                 </ul>
             </div>
             <!-- e : skills -->
             
-            <div class="" style="border-top:1px solid orange; border-bottom:1px solid orange"></div>
+            <div class="" style="border-top:1px solid #ddd; ">
+                <ul class="tab__item">
+                    <li class="on" data-tab="tab-cont1"><a href="#none;">Project</a></li>
+                    <li data-tab="tab-cont2"><a href="#none;">Study</a></li>
+                    <!--<li data-tab="tab-cont3"><a href="#none;">tab3</a></li>-->
+                </ul>    
+            </div>
+
+            <script>
+
+                $('.tab__item > li').click(function(){
+                    var tabCont = $(this).attr('data-tab');
+                    $(this).addClass('on').siblings().removeClass('on');
+
+                    $('#' + tabCont).addClass('on')
+                    $('#' + tabCont).siblings().removeClass('on');
+                });
+
+
+            </script>
+
             <div class="pject">
-                <ul class="pject__list">
-                    <li><a>1</a></li>
-                    <li><a>2</a></li>
-                    <li><a>3</a></li>
-                    <li><a>4</a></li>
-                    <li><a>1</a></li>
-                    <li><a>2</a></li>
-                    <li><a>3</a></li>
-                    <li><a>4</a></li>
-                </ul>
+                <div id="tab-cont1" class="tab__cont on">
+                    <ul class="pject__list">
+                        <!--<li><a href="javascript:void(0);" onclick="popOn()">
+                            고려저축은행 금융플랫폼 개편사업
+                        </a></li>
+                        <li><a href="#none"></a></li>-->
+                    </ul>
+                </div>
+                <div id="tab-cont2" class="tab__cont">
+                    <ul class="pject__list">
+                        <!--<li><a href="javascript:void(0);" onclick="popOn()">1</a></li>
+                        <li><a href="#none"></a></li>-->
+                    </ul>
+                </div>
+                <div id="tab-cont3" class="tab__cont">3</div>
             </div>
         </div>
+
+        <div id="" class="layerpop">
+            <div class="layerpop__wrap">
+                <button class="layerpop__close">닫기</button>
+                <section class="pic"><img src="" alt="" /></section>
+                <section class="contents">
+                    <div class="profile">inne.313</div>
+                    <div class="cont">
+                        <dl class="data">
+                            <dt class=""><span style="float:right;font-weight:normal;">2023.06 - 2023.07</span></dt>
+                            <dd class=""></dd>
+                        </dl>
+                        <a href="#none">바로가기</a>
+
+                        <p>
+                            <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+                        </p>
+                    </div>
+                    <div class="comment">
+                        <div></div>
+                        <input type="text" placeholder="댓글 달기...." />
+                        <button>게시</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+
     </div>
 </body>
+
+<script>
+    
+
+    
+    const porData = {
+        1 : {
+        'id' : 'layerpop1',
+        'url' : './assets/images/port_1.png',
+        'tit' : '바로저축은행 여신통합시스템 구축',
+        'content' : '(2019.11 ~ 2020.03)\n- 업무내용 : 여신통합시스템 Pc/Mo 웹 퍼블리싱 | 퍼블리싱 기여도 90%\n- 디자인 보조 : 레이아웃 디자인 및 이미지 보정 업무 보조 | 디자인 기여도 30%\n- 운영 및 유지보수를 위해 코드를 공통 사용이 가능하도록 설계',
+        },
+        2 : {
+        'id' : 'layerpop2',
+        'url' : './assets/images/port_2.png',
+        'tit' : 'JT저축은행 모바일 앱 개발',
+        'content' : '(2020.05 ~ 2020.07)\n- 업무내용 : JT저축은행 앱 퍼블리싱 | 퍼블리싱 기여도 40%\n- 디자인 보조 : 앱 아이콘 제작 및 이미지 보정업무 보조',
+        },
+        3 : {
+        'id' : 'layerpop3',
+        'url' : './assets/images/port_3.png',
+        'tit' : 'BC카드 스탁론 화면개발',
+        'content' : '(2020.09 ~ 2020.10)\n- 업무 내용 : BC카드 스탁론 페이지 퍼블리싱 | 퍼블리싱 기여도 70%',
+        'aurl' : 'https://stock.bccard.com',
+        },
+        4 : {
+        'id' : 'layerpop4',
+        'url' : './assets/images/port_4.png',
+        'tit' : '신용회복위원회 심층상담서비스 화면개발',
+        'content' : '(2020.10 ~ 2020.12)\n- 업무 내용 : 신복위 심층상담서비스 Pc/Mo 퍼블리싱 | 퍼블리싱 기여도 60% ',
+        },
+        5 : {
+        'id' : 'layerpop5',
+        'url' : './assets/images/port_5.png',
+        'tit' : '롯데카드 스탁론 화면개발',
+        'content' : '(2020.12 ~ 2021.01)\n- 업무 내용 : 롯데카드 스탁론 페이지 퍼블리싱 | 디자인 기여도 100%, 퍼블리싱 기여도 100%\n- IE8부터 고려하여 퍼블리싱 진행\n- 화면설계서 기획 업무 보조 | 기여도 30%',
+        'aurl' : 'https://sln.lottecard.co.kr/cbm00100.frm',
+        },
+        6 : {
+        'id' : 'layerpop6',
+        'url' : './assets/images/port_6.png',
+        'tit' : '청일건설 홈페이지 구축',
+        'content' : '(2021.01 ~ 2021.02)\n- 업무 내용 : 청일건설 회사 홈페이지 반응형 퍼블리싱 | 퍼블리싱 기여도 100%\n- 업체와의 정기적인 미팅 이메일 소통을 통해 프로젝트 진행 상황 공유 및 작업 진행.',
+        },
+        7 : {
+        'id' : 'layerpop7',
+        'url' : './assets/images/port_7.png',
+        'tit' : '청일건설 홈페이지 구축',
+        'content' : '(2021.01 ~ 2021.02)\n- 업무 내용 : 청일건설 회사 홈페이지 반응형 퍼블리싱 | 퍼블리싱 기여도 100%\n- 업체와의 정기적인 미팅 이메일 소통을 통해 프로젝트 진행 상황 공유 및 작업 진행.',
+        },
+        8 : {
+        'id' : 'layerpop8',
+        'url' : './assets/images/port_8.png',
+        'tit' : '청일건설 홈페이지 구축',
+        'content' : '(2021.01 ~ 2021.02)\n- 업무 내용 : 청일건설 회사 홈페이지 반응형 퍼블리싱 | 퍼블리싱 기여도 100%\n- 업체와의 정기적인 미팅 이메일 소통을 통해 프로젝트 진행 상황 공유 및 작업 진행.',
+        },
+    };  
+
+    function popOn(idx){
+        $('.layerpop').addClass('on');
+        $('.wrapper').addClass('on');
+
+        $('.pic > img').attr('src', porData[idx].url);
+        $('.cont .data > dt').text(porData[idx].tit);
+        $('.cont .data > dd').html( porData[idx].content.replace(/\n/g, '<br />') );
+        console.log(idx);
+    }
+
+    $('.layerpop__close').click(function(){
+        $('.layerpop').removeClass('on');
+        $('.wrapper').removeClass('on');
+    });
+
+    pjectList();
+    function pjectList(){
+
+        const pLength = Object.values(porData).length;
+        for(var i=0; i<pLength; i++){
+            $('#tab-cont1 .pject__list').append('<li></li>');
+        }
+        $('#tab-cont1 .pject__list > li').each(function(){
+            // #tab-cont 어떤건지 읽어오기
+            const idx = $('#tab-cont1 .pject__list > li').length - $(this).index();
+            //$('.cont .data').empty('');
+            if(porData.hasOwnProperty(idx)){// 해당 인덱스의 데이터가 존재하는지 확인
+                $(this).append('<a href="#none"><img src="'+ porData[idx].url + '"/></a>');
+            }
+        });
+    }
+
+    $('.pject__list > li').click(function(){
+        // #tab-cont 어떤건지 읽어오기
+        const idx = $('#tab-cont1 .pject__list > li').length - $(this).index();
+
+        // aurl 있을 때 바로가기 show/hide
+        if (porData.hasOwnProperty(idx)) { // 해당 인덱스의 데이터가 존재하는지 확인
+            //$('.cont .data').empty('');
+            popOn(idx); 
+        } else {
+            console.error("정의되지 않은 인덱스입니다:", idx);
+        }
+        
+    });
+    //popOn(5);*/
+
+    $(window).scroll(function(){
+
+        var scrollTop = window.pageYOffset;
+        var height = $(document).scrollTop();
+        var itemPos = $('.pject').offset().top;
+        
+        $('.pject__list > li').each(function() {
+            var $this = $(this);
+            if ($this.offset().top + $this.outerHeight() > $(window).scrollTop() &&
+                $this.offset().top < $(window).scrollTop() + $(window).height() &&
+                !$this.hasClass('animated')) {
+                $this.animate({ opacity: 1 }, 600).addClass('animated');
+            }
+        });
+      
+        $('.pject__list > li').each(function(i) {
+            //console.log(i);
+            setTimeout(() => {
+                $(this).animate({
+                    opacity: 1,
+                }, 300);
+            }, 300 * i);
+        });
+        console.log(scrollTop + ', ' + itemPos + ', ' + $(window).outerHeight() );
+    });
+    
+
+    
+</script>
 </html>
