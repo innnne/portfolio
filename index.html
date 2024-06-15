@@ -121,7 +121,7 @@
                 <div id="tab-cont3" class="tab__cont">3</div>
             </div>
         </div>
-
+        <!-- // popup -->
         <div id="" class="layerpop">
             <div class="layerpop__wrap">
                 <button class="layerpop__close">닫기</button>
@@ -130,8 +130,9 @@
                     <div class="profile">inne.313</div>
                     <div class="cont">
                         <dl class="data">
-                            <dt class=""><span style="float:right;font-weight:normal;">2023.06 - 2023.07</span></dt>
-                            <dd class=""></dd>
+                            <!--<dt class=""><span style="float:right;font-weight:normal;">2023.06 - 2023.07</span></dt>-->
+                            <dt></dt>
+                            <dd></dd>
                         </dl>
                         <!--<a href="#none">바로가기</a>-->
                     </div>
@@ -143,13 +144,14 @@
                 </section>
             </div>
         </div>
+        <!-- popup // -->
 
     </div>
 </body>
 
 <script>
     
-    
+    //history.scrollRestoration = "auto";
     const porData = {
         1 : {
         'id' : 'layerpop1',
@@ -209,6 +211,15 @@
 
         $('.layerpop').attr('id', 'layerpop' + idx);
 
+        if(porData.hasOwnProperty){
+            $('.cont .data').empty();
+            $('.pic > img').attr('src', porData[idx].url);
+            $('.cont .data').append('<dt>' + porData[idx].tit + '</dt>');
+            $('.cont .data').append('<dd>' + (porData[idx].content.replace(/\n/g,'<br />')) + '</dd>');
+        }else{
+            alert('!!내용없음!!');
+        }
+/*
         $('.pic > img').attr('src', porData[idx].url);
         $('.cont .data > dt').text(porData[idx].tit);
         $('.cont .data > dd').html( porData[idx].content.replace(/\n/g, '<br />') );
@@ -217,9 +228,9 @@
         
         if(porData[idx].aurl){
             console.log(idx);
-            $('#layerpop' + idx + ' .cont').append('<a href="' + porData[idx].aurl + '" target="_blank" >바로가기</a>');
+            $('#layerpop' + idx + ' .cont .data dd').after('<dd><a href="' + porData[idx].aurl + '" target="_blank" >바로가기</a></dd>');
             $('.cont > a').attr('href', porData[idx].aurl);
-        }
+        }*/
     }
 
     $('.layerpop__close').click(function(){
@@ -246,13 +257,15 @@
         });
     }
 
-    $('.pject__list > li').click(function(){
+    $('.pject__list > li').click(function(e){
+        
         // #tab-cont 어떤건지 읽어오기
         const idx = $('#tab-cont1 .pject__list > li').length - $(this).index();
 
         // aurl 있을 때 바로가기 show/hide
         if (porData.hasOwnProperty(idx)) { // 해당 인덱스의 데이터가 존재하는지 확인
             //$('.cont .data').empty('');
+            //e.preventDefault();
             popOn(idx); 
         } else {
             console.error("정의되지 않은 인덱스입니다:", idx);
