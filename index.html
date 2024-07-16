@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale:1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/reset.css" />
-    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>    
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="./assets/js/swiper-bundle.min.js"></script>    
+    <script type="text/javascript" src="./assets/js/common.js"></script>  
 </head>
 <body>
     <div id="skip"></div>
@@ -90,19 +93,6 @@
                 </ul>    
             </div>
 
-            <script>
-
-                $('.tab__item > li').click(function(){
-                    var tabCont = $(this).attr('data-tab');
-                    $(this).addClass('on').siblings().removeClass('on');
-
-                    $('#' + tabCont).addClass('on')
-                    $('#' + tabCont).siblings().removeClass('on');
-                });
-
-
-            </script>
-
             <div class="pject">
                 <div id="tab-cont1" class="tab__cont on">
                     <ul class="pject__list">
@@ -121,7 +111,7 @@
                 <div id="tab-cont3" class="tab__cont">3</div>
             </div>
         </div>
-        <!-- // popup -->
+        <!-- // popup --
         <div id="" class="layerpop">
             <div class="layerpop__wrap">
                 <button class="layerpop__close">닫기</button>
@@ -130,11 +120,10 @@
                     <div class="profile">inne.313</div>
                     <div class="cont">
                         <dl class="data">
-                            <!--<dt class=""><span style="float:right;font-weight:normal;">2023.06 - 2023.07</span></dt>-->
+                            <!--<dt class=""><span style="float:right;font-weight:normal;">2023.06 - 2023.07</span></dt>--
                             <dt></dt>
                             <dd></dd>
                         </dl>
-                        <!--<a href="#none">바로가기</a>-->
                     </div>
                     <div class="comment">
                         <div></div>
@@ -146,161 +135,37 @@
         </div>
         <!-- popup // -->
 
+        <div class="layerpop swiper-container">
+            <button class="layerpop__close">닫기</button>
+            <div class="layerpop__container swiper-wrapper">
+                <!--
+                <div class="layerpop__wrap swiper-slide">
+                    <section class="pic"><img src="" alt="" /></section>
+                    <section class="contents">
+                        <div class="profile">inne.313</div>
+                        <div class="cont">
+                            <dl class="data">
+                                <!--<dt class=""><span style="float:right;font-weight:normal;">2023.06 - 2023.07</span></dt>--
+                                <dt></dt>
+                                <dd></dd>
+                            </dl>
+                        </div>
+                        <div class="comment">
+                            <div></div>
+                            <input type="text" placeholder="댓글 달기...." />
+                            <button>게시</button>
+                        </div>
+                    </section>
+                </div>-->
+                
+            </div>
+            
+            <div class="swiper-nav">
+                <button class="prev">이전</button>
+                <button class="next">다음</button>
+            </div>
+        </div>
+
     </div>
 </body>
-
-<script>
-    
-    //history.scrollRestoration = "auto";
-    const porData = {
-        1 : {
-        'id' : 'layerpop1',
-        'url' : './assets/images/port_1.png',
-        'tit' : '바로저축은행 여신통합시스템 구축',
-        'content' : '(2019.11 ~ 2020.03)\n- 업무내용 : 여신통합시스템 Pc/Mo 웹 퍼블리싱 | 퍼블리싱 기여도 90%\n- 디자인 보조 : 레이아웃 디자인 및 이미지 보정 업무 보조 | 디자인 기여도 30%\n- 운영 및 유지보수를 위해 코드를 공통 사용이 가능하도록 설계',
-        },
-        2 : {
-        'id' : 'layerpop2',
-        'url' : './assets/images/port_2.png',
-        'tit' : 'JT저축은행 모바일 앱 개발',
-        'content' : '(2020.05 ~ 2020.07)\n- 업무내용 : JT저축은행 앱 퍼블리싱 | 퍼블리싱 기여도 40%\n- 디자인 보조 : 앱 아이콘 제작 및 이미지 보정업무 보조',
-        },
-        3 : {
-        'id' : 'layerpop3',
-        'url' : './assets/images/port_3.png',
-        'tit' : 'BC카드 스탁론 화면개발',
-        'content' : '(2020.09 ~ 2020.10)\n- 업무 내용 : BC카드 스탁론 페이지 퍼블리싱 | 퍼블리싱 기여도 70%',
-        'aurl' : 'https://stock.bccard.com',
-        },
-        4 : {
-        'id' : 'layerpop4',
-        'url' : './assets/images/port_4.png',
-        'tit' : '신용회복위원회 심층상담서비스 화면개발',
-        'content' : '(2020.10 ~ 2020.12)\n- 업무 내용 : 신복위 심층상담서비스 Pc/Mo 퍼블리싱 | 퍼블리싱 기여도 60% ',
-        },
-        5 : {
-        'id' : 'layerpop5',
-        'url' : './assets/images/port_5.png',
-        'tit' : '롯데카드 스탁론 화면개발',
-        'content' : '(2020.12 ~ 2021.01)\n- 업무 내용 : 롯데카드 스탁론 페이지 퍼블리싱 | 디자인 기여도 100%, 퍼블리싱 기여도 100%\n- IE8부터 고려하여 퍼블리싱 진행\n- 화면설계서 기획 업무 보조 | 기여도 30%',
-        'aurl' : 'https://sln.lottecard.co.kr/cbm00100.frm',
-        },
-        6 : {
-        'id' : 'layerpop6',
-        'url' : './assets/images/port_6.png',
-        'tit' : '청일건설 홈페이지 구축',
-        'content' : '(2021.01 ~ 2021.02)\n- 업무 내용 : 청일건설 회사 홈페이지 반응형 퍼블리싱 | 퍼블리싱 기여도 100%\n- 업체와의 정기적인 미팅 이메일 소통을 통해 프로젝트 진행 상황 공유 및 작업 진행.',
-        },
-        7 : {
-        'id' : 'layerpop7',
-        'url' : './assets/images/port_7.png',
-        'tit' : '청일건설 홈페이지 구축',
-        'content' : '(2021.01 ~ 2021.02)\n- 업무 내용 : 청일건설 회사 홈페이지 반응형 퍼블리싱 | 퍼블리싱 기여도 100%\n- 업체와의 정기적인 미팅 이메일 소통을 통해 프로젝트 진행 상황 공유 및 작업 진행.',
-        },
-        8 : {
-        'id' : 'layerpop8',
-        'url' : './assets/images/port_8.png',
-        'tit' : '청일건설 홈페이지 구축',
-        'content' : '(2021.01 ~ 2021.02)\n- 업무 내용 : 청일건설 회사 홈페이지 반응형 퍼블리싱 | 퍼블리싱 기여도 100%\n- 업체와의 정기적인 미팅 이메일 소통을 통해 프로젝트 진행 상황 공유 및 작업 진행.',
-        },
-    };  
-
-    function popOn(idx){
-        $('.layerpop').addClass('on');
-        $('.wrapper').addClass('on');
-
-        $('.layerpop').attr('id', 'layerpop' + idx);
-
-        if(porData.hasOwnProperty){
-            $('.cont .data').empty();
-            $('.pic > img').attr('src', porData[idx].url);
-            $('.cont .data').append('<dt>' + porData[idx].tit + '</dt>');
-            $('.cont .data').append('<dd>' + (porData[idx].content.replace(/\n/g,'<br />')) + '</dd>');
-        }else{
-            alert('!!내용없음!!');
-        }
-/*
-        $('.pic > img').attr('src', porData[idx].url);
-        $('.cont .data > dt').text(porData[idx].tit);
-        $('.cont .data > dd').html( porData[idx].content.replace(/\n/g, '<br />') );
-        //console.log(idx);
-
-        
-        if(porData[idx].aurl){
-            console.log(idx);
-            $('#layerpop' + idx + ' .cont .data dd').after('<dd><a href="' + porData[idx].aurl + '" target="_blank" >바로가기</a></dd>');
-            $('.cont > a').attr('href', porData[idx].aurl);
-        }*/
-    }
-
-    $('.layerpop__close').click(function(){
-        $('.layerpop').removeClass('on');
-        $('.wrapper').removeClass('on');
-    });
-
-    pjectList();
-    function pjectList(){
-
-        const pLength = Object.values(porData).length;
-        for(var i=0; i<pLength; i++){
-            $('#tab-cont1 .pject__list').append('<li></li>');
-        }
-        $('#tab-cont1 .pject__list > li').each(function(){
-            // #tab-cont 어떤건지 읽어오기
-            const idx = $('#tab-cont1 .pject__list > li').length - $(this).index();
-            //$('.cont .data').empty('');
-            if(porData.hasOwnProperty(idx)){// 해당 인덱스의 데이터가 존재하는지 확인
-                $(this).append('<a href="#none"><img src="'+ porData[idx].url + '"/></a>');
-
-            }
-
-        });
-    }
-
-    $('.pject__list > li').click(function(e){
-        
-        // #tab-cont 어떤건지 읽어오기
-        const idx = $('#tab-cont1 .pject__list > li').length - $(this).index();
-
-        // aurl 있을 때 바로가기 show/hide
-        if (porData.hasOwnProperty(idx)) { // 해당 인덱스의 데이터가 존재하는지 확인
-            //$('.cont .data').empty('');
-            //e.preventDefault();
-            popOn(idx); 
-        } else {
-            console.error("정의되지 않은 인덱스입니다:", idx);
-        }
-        
-    });
-    //popOn(5);
-
-    $(window).scroll(function(){
-
-        var scrollTop = window.pageYOffset;
-        var height = $(document).scrollTop();
-        var itemPos = $('.pject').offset().top;
-        
-        $('.pject__list > li').each(function() {
-            var $this = $(this);
-            if ($this.offset().top + $this.outerHeight() > $(window).scrollTop() &&
-                $this.offset().top < $(window).scrollTop() + $(window).height() &&
-                !$this.hasClass('animated')) {
-                $this.animate({ opacity: 1 }, 600).addClass('animated');
-            }
-        });
-      
-        $('.pject__list > li').each(function(i) {
-            //console.log(i);
-            setTimeout(() => {
-                $(this).animate({
-                    opacity: 1,
-                }, 300);
-            }, 300 * i);
-        });
-        console.log(scrollTop + ', ' + itemPos + ', ' + $(window).outerHeight() );
-    });
-    
-
-    
-</script>
 </html>
