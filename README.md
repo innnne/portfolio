@@ -1,2 +1,2 @@
-# portfolio
-링크 (https://innnne.github.io/portfolio)
+# Portfolio
+🔗 https://innnne.github.io/portfolio
