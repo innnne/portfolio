@@ -48,6 +48,22 @@ $(document).ready(function(){
             const dataDl = $('<div class="cont"><dl class="data"><dt>' + pj.tit + '</dt><dd>' 
                         + pj.content.replace(/\n/g, '<br />') + '</dd></dl></div>');
 
+            // 240820 
+            const skillData = pj.skills.split(" ");
+            if( skillData.includes('html') ){
+                secContents.prepend("<span class='bedge html'>html</span>");
+            }else if(skillData.includes('css')){
+                secContents.prepend("<span class='bedge css'>css</span>");
+            }else if(skillData.includes('js')){
+                secContents.prepend("<span class='bedge js'>javascript</span>");
+            }else if(skillData.includes('jquery')){
+                secContents.prepend("<span class='bedge jquery'>jQuery</span>");
+            }else if(skillData.includes('rn')){
+                secContents.prepend("<span class='bedge rn'>React Native</span>");
+            }else{
+                
+            }
+
             // data
             secContents.append(dataDl);
             slide.append(secPic, secContents);
