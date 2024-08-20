@@ -49,10 +49,10 @@ $(document).ready(function(){
                         + pj.content.replace(/\n/g, '<br />') + '</dd></dl></div>');
 
             // 240820 
-            const skillData = pj.skills;
-            const skillArr = skillData.split(" ");
-            console.log(skillData + ", " + skillArr);
-            /*
+            const skillData = (pj.skills || "").split(" ");
+            //const skillArr = skillData.split(" ");
+            console.log(skillData);
+            
             if( skillData.includes('html') ){
                 secContents.prepend("<span class='bedge html'>html</span>");
             }else if(skillData.includes('css')){
@@ -65,7 +65,7 @@ $(document).ready(function(){
                 secContents.prepend("<span class='bedge rn'>React Native</span>");
             }else{
                 
-            }*/
+            }
 
             // data
             secContents.append(dataDl);
