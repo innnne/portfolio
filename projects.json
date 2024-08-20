@@ -5,7 +5,7 @@
             "url" : "./assets/images/port_1.png",
             "tit" : "바로저축은행 여신통합시스템 구축",
             "period" : "2019.11 - 2020.03",
-            "skils" : "html css js jquery",
+            "skills" : "html css js jquery",
             "content" : "- 여신통합시스템 Pc/Mo 웹 퍼블리싱 및 레이아웃 디자인 \n- 레이아웃 디자인 및 이미지 보정 업무 보조\n- 운영 및 유지보수를 위해 코드를 공통 사용이 가능하도록 설계퍼블리싱 기여도 90%\n | 디자인 기여도 30%"
         },
         {
@@ -13,6 +13,7 @@
             "url" : "./assets/images/port_2.png",
             "tit" : "JT저축은행 모바일 앱 개발",
             "period" : "2020.05 - 2020.07",
+            "skills" : "html css js rn",
             "content" : "- JT저축은행 앱 퍼블리싱 | 퍼블리싱 기여도 40%\n- 앱 아이콘 제작 및 이미지 보정업무 보조"
         },
         {
