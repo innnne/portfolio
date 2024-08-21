@@ -49,24 +49,26 @@ $(document).ready(function(){
                         + pj.content.replace(/\n/g, '<br />') + '</dd></dl></div>');
 
             // 240820 
-            const skillData = (pj.skills || "").split(" ");
-            //const skillArr = skillData.split(" ");
-            console.log(skillData);
+            const skillData = (pj.skills || '').split(' ');
+            skillData.forEach(skill => {
+                if(skill === 'html'){
+                    //skillEl = $('<span class="bedge html">html</span>');
+                    dataDl.before('<span class="bedge html">html</span>');
+                }
+                if(skill === 'css'){
+                    dataDl.before('<span class="bedge css">css</span>');
+                }
+                if(skill === 'js'){
+                    dataDl.before('<span class="bedge js">javascript</span>');
+                }
+                if(skill === 'jquery'){
+                    dataDl.before('<span class="bedge jquery">jQuery</span>');
+                }
+                if(skill === 'rn'){
+                    dataDl.before('<span class="bedge rn">React Native</span>');
+                }
+            });
             
-            if( skillData.includes('html') ){
-                secContents.prepend("<span class='bedge html'>html</span>");
-            }else if(skillData.includes('css')){
-                secContents.prepend("<span class='bedge css'>css</span>");
-            }else if(skillData.includes('js')){
-                secContents.prepend("<span class='bedge js'>javascript</span>");
-            }else if(skillData.includes('jquery')){
-                secContents.prepend("<span class='bedge jquery'>jQuery</span>");
-            }else if(skillData.includes('rn')){
-                secContents.prepend("<span class='bedge rn'>React Native</span>");
-            }else{
-                
-            }
-
             // data
             secContents.append(dataDl);
             slide.append(secPic, secContents);
