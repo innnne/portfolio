@@ -34,7 +34,7 @@ $(document).ready(function(){
 
             // 프로젝트 목록생성
             const pjList = $('<li></li>');
-            const content = '<a href="#none"><img src="' + pj.url + '" /></a>';
+            const content = '<a href="#none"><p><span>' + pj.tit + '</span><span>' + pj.cus + '</span></p><img src="' + pj.url + '" /></a>';
 
             pjList.append(content);
             $("#" + tabId + " .pject__list").append(pjList);
@@ -48,30 +48,45 @@ $(document).ready(function(){
             const dataDl = $('<div class="cont"><dl class="data"><dt>' + pj.tit + '</dt><dd>' 
                         + pj.content.replace(/\n/g, '<br />') + '</dd></dl></div>');
 
-            // 240820 
-            const skillData = (pj.skills || '').split(' ');
-            skillData.forEach(skill => {
-                if(skill === 'html'){
-                    //skillEl = $('<span class="bedge html">html</span>');
-                    dataDl.before('<span class="bedge html">html</span>');
-                }
-                if(skill === 'css'){
-                    dataDl.before('<span class="bedge css">css</span>');
-                }
-                if(skill === 'js'){
-                    dataDl.before('<span class="bedge js">javascript</span>');
-                }
-                if(skill === 'jquery'){
-                    dataDl.before('<span class="bedge jquery">jQuery</span>');
-                }
-                if(skill === 'rn'){
-                    dataDl.before('<span class="bedge rn">React Native</span>');
-                }
-            });
             
             // data
             secContents.append(dataDl);
             slide.append(secPic, secContents);
+            
+            // 240820 
+            const skillData = (pj.skills || '').split(' ');
+            const bedgeWrap = $('<div class="bedgeWrap"></div>');
+            dataDl.before(bedgeWrap);
+
+            skillData.forEach(skill => {
+                if(skill === 'html'){
+                    //skillEl = $('<span class="bedge html">html</span>');
+                    bedgeWrap.append('<span class="bedge html">html</span>');
+                }
+                if(skill === 'css'){
+                    bedgeWrap.append('<span class="bedge css">css</span>');
+                }
+                if(skill === 'js'){
+                    bedgeWrap.append('<span class="bedge js">javascript</span>');
+                }
+                if(skill === 'jquery'){
+                    bedgeWrap.append('<span class="bedge jquery">jQuery</span>');
+                }
+                if(skill === 'rn'){
+                    bedgeWrap.append('<span class="bedge rn">React Native</span>');
+                }
+
+                if(skill === 'web'){
+                    bedgeWrap.append('<span class="bedge web"></span>');
+                }
+                if(skill === 'mb'){
+                    bedgeWrap.append('<span class="bedge mb"></span>');
+                }
+                if(skill === 'mw'){
+                    bedgeWrap.append('<span class="bedge mw"></span>');
+                }
+            });
+            
 
             $('#swiper_' + tabId + ' .layerpop__container').append(slide);
         });

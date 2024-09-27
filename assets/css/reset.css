@@ -2,7 +2,7 @@
 
 * { margin:0; padding:0; }
 
-html, body { width:100%; font-size:18px; font-family:'NotoSansCJKkr-regular'; }
+html, body { width:100%; font-size:18px; font-family:'NotoSansCJKkr-regular', sans-serif; }
 
 ul,ol,li,dl,dt,dd{list-style:none; margin:0; padding:0px}
 
